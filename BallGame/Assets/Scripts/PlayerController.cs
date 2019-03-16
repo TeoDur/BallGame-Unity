@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
         count = 0;
         SetCountText();
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 16)
+        if (count >= 8)
         {
             winText.text = "You Win!";
         }
