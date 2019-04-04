@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Text winText;
 
     private Rigidbody rb;
+    private AudioSource coinPickup;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
         count = 0;
         SetCountText();
         winText.text = "";
+        coinPickup = GetComponent<AudioSource>();
     }
 
     void FixedUpdate()
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
             other.gameObject.SetActive(false);
             count++;
             SetCountText();
+            coinPickup.Play();
         }
     }
     void SetCountText()
